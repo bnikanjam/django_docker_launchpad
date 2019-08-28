@@ -9,11 +9,13 @@ from django.contrib.auth import get_user_model
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=250, blank=True, null=True)
     slug = models.SlugField(max_length=200)
     date = models.DateField(auto_now=now)
     author = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     cover = models.ImageField(upload_to='covers/', default='images/hello_cover.png')
+    isbn = models.CharField(max_length=13, blank=True, null=True)
 
     class Meta:
         permissions = [

@@ -31,6 +31,8 @@ else:
 
 
 INSTALLED_APPS = [
+    'rest_framework',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +53,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'books.apps.BooksConfig',
+    'books_api.apps.BooksApiConfig',
     'orders.apps.OrdersConfig',
 ]
 DEVELOPMENT_INSTALLED_APPS = [
