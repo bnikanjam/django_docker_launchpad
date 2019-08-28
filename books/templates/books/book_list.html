@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Books
+{% endblock title %}
+
+{% block content %}
+
+    <a class="btn btn-success btn-sm mb-4" href="{% url 'orders' %}">Purchase All Books</a>
+    {% for book in books %}
+        <div class="mb-4">
+            <h5><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h5>
+            <h6 class="">by {{ book.author }}</h6>
+        </div>
+    {% endfor %}
+{% endblock content %}

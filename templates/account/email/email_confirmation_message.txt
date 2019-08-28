@@ -1,0 +1,17 @@
+{% load account %}
+{% user_display user as user_display %}
+{% load i18n %}
+
+{% autoescape off %}
+    {% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+
+        Welcome to {{ site_name }}. If it's really you {{ user_display }},  joining us Please, confirm your sign up with going to:
+        {{ activate_url }}
+
+    {% endblocktrans %}
+{% endautoescape %}
+
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+    Thank you from {{ site_name }}!
+    {{ site_domain }}
+{% endblocktrans %}

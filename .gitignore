@@ -1,0 +1,36 @@
+### Environments
+.env
+.venv
+env/
+venv/
+docs/devdocs/
+
+
+### macOS
+.DS_Store
+
+
+### IDEs
+.idea/
+.vscode/
+
+
+### Python & Django
+__pycache__/
+# users uploaded files in dev
+media/
+# collected static files for production
+staticfiles/
+logs/
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3
+celerybeat-schedule
+staticfiles
+recyclebin
+
+
+### Unit test / Coverage Reports
+

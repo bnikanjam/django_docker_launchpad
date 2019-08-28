@@ -1,0 +1,37 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+
+{#{% block title %}#}
+{#    Sign Up#}
+{#{% endblock title %}#}
+{##}
+{#{% block side-content %}#}
+{#    <h2>Sign Up</h2>#}
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{#        {{ form|crispy}}#}
+{#        <button type="submit">Yes, Sign Up</button>#}
+{#    </form>#}
+{##}
+{#{% endblock %}#}
+
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Sign Up</title>
+{% endblock title %}
+
+{% block side-content %}
+    <form method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <h6>Thanks for signing up...</h6>
+            {{ form|crispy }}
+        </fieldset>
+        <div>
+            <button type="submit" class="btn btn-info btn-sm">Sign Up</button>
+        </div>
+
+    </form>
+{% endblock %}
