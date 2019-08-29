@@ -14,7 +14,7 @@ class Book(models.Model):
     date = models.DateField(auto_now=now)
     author = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    cover = models.ImageField(upload_to='covers/', default='images/hello_cover.png')
+    cover = models.ImageField(upload_to='covers/', default='covers/django_restful.jpg')
     isbn = models.CharField(max_length=13, blank=True, null=True)
 
     class Meta:
