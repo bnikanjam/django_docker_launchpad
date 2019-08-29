@@ -17,6 +17,7 @@ django-extensions = "*"
 djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.7"

@@ -32,14 +32,15 @@ else:
 
 INSTALLED_APPS = [
     'rest_framework',
-    
+    'corsheaders',  # corsheaders config
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',  # for allauth
+    'django.contrib.sites',  # allauth config
     'django.contrib.humanize',
 
     # External
@@ -57,7 +58,7 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
 ]
 DEVELOPMENT_INSTALLED_APPS = [
-    'debug_toolbar',  # for django-debug-toolbar
+    'debug_toolbar',  # django-debug-toolbar config
     'django_extensions',
 ]
 if ENVIRONMENT == 'development':
@@ -65,6 +66,9 @@ if ENVIRONMENT == 'development':
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # corsheaders config
+    'django.middleware.common.CommonMiddleware',  # corsheaders config
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,7 +76,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',  # for django-debug-toolbar
+    'debug_toolbar.middleware.DebugToolbarMiddleware',  # django-debug-toolbar config
 ]
 
 
@@ -175,6 +179,19 @@ ACCOUNT_LOGIN_ON_PASSWORD_RESET = True
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# corsheaders config
+CORS_ORIGIN_WHITELIST = [
+    'http://127.0.0.1:3000',
+]
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 
 # SendGrid Email
