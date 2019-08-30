@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'books.apps.BooksConfig',
     'books_api.apps.BooksApiConfig',
     'orders.apps.OrdersConfig',
+    'blog.apps.BlogConfig',
 ]
 DEVELOPMENT_INSTALLED_APPS = [
     'debug_toolbar',  # django-debug-toolbar config
@@ -179,6 +180,14 @@ ACCOUNT_LOGIN_ON_PASSWORD_RESET = True
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
 
 # corsheaders config
 CORS_ORIGIN_WHITELIST = [
