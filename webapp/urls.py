@@ -6,6 +6,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('accounts/', include('allauth.urls')),
+    path('api-auth/', include('rest_framework.urls')),  # the 'api-auth/' route could be anything else
 
     path('', include('pages.urls')),
     path('books/', include('books.urls')),
