@@ -6,7 +6,7 @@ from django.utils.text import slugify
 
 
 class BaseModel(models.Model):
-    created_at = models.DateTimeField(default=timezone.now())
+    created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
     content = models.TextField()
 
