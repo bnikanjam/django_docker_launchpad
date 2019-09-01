@@ -18,7 +18,7 @@ class BaseModel(models.Model):
 class Post(BaseModel):
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=127)
-    slug = models.SlugField(max_length=127)
+    slug = models.SlugField(max_length=127, unique=True)
     description = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta(BaseModel.Meta):
