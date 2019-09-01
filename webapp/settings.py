@@ -32,6 +32,9 @@ else:
 
 INSTALLED_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',  # generate tokens on server
+    'rest_auth',  # login, logout, password reset endpoints
+    'rest_auth.registration',
     'corsheaders',  # corsheaders config
 
     'django.contrib.admin',
@@ -185,7 +188,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }
 
 
