@@ -1,22 +1,4 @@
-{#{% extends '_base.html' %}#}
-{#{% load crispy_forms_tags %}#}
-{#{% load socialaccount %}#}
-{##}
-{#{% block title %}#}
-{#    Sign In#}
-{#{% endblock title %}#}
-{##}
-{#{% block content %}#}
-{#    <h4><a href="{% provider_login_url 'github' %}">GitHub OAuth Sign in</a> </h4>#}
-{#    <h4>Local Account Sign <in></in></h4>#}
-{#    <form method="post">#}
-{#        {% csrf_token %}#}
-{#        {{ form|crispy }}#}
-{#        <button type="submit" class="btn btn-info">Yes, Sign In</button>#}
-{#    </form>#}
-{#{% endblock content %}#}
-
-{% extends 'home.html' %}
+{% extends 'cover.html' %}
 {% load socialaccount %}
 {% load crispy_forms_tags %}
 
@@ -24,22 +6,23 @@
     <title>Sign in</title>
 {% endblock title %}
 
-{% block side-content %}
+{% block content %}
 
 
     <div class="card-body border btn-lg text-center">
-            <a href="{% provider_login_url 'github' %}"><i class="fab fa-github"></i> Sign in with GitHub</a>
+        <p><a href="{% provider_login_url 'github' %}"><i class="fab fa-github"></i> Sign in with GitHub</a></p>
+        <p><a href="{% provider_login_url 'github' %}"><i class="fab fa-linkedin"></i> </i> Sign in with Linkedin</a></p>
     </div>
 
     <form class="" method="post">
         {% csrf_token %}
         <fieldset class="form-text mt-5">
-            <h6 class="">If you have an account here</h6>
+            <h5>Sign in with Email</h5>
             {{ form|crispy }}
         </fieldset>
         <div class="pb-3">
             <small>
-                <a class="pr-2 text-muted" href="{% url 'home' %}">cancel</a>
+                <a class="pr-2 text-muted" href="{% url 'cover' %}">cancel</a>
             </small>
             <button type="submit" class="btn btn-info">Let me in!</button>
         </div>
