@@ -1,0 +1,17 @@
+
+
+{% extends 'cover.html' %}
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.first_name %}
+            <div>Welcome {{ user.first_name }}</div>
+        {% endif %}
+            You are now signed in with {{ user.email }}
+            <div><a href="{% url 'account_logout'  %}">Sign out</a></div>
+        {% else %}
+            You are not signed in yet!
+            <div><a href="{% url 'account_login' %}">Sign in</a></div>
+            <div><a href="{% url 'account_signup' %}">Sign up</a></div>
+    {% endif %}
+{% endblock content %}
+

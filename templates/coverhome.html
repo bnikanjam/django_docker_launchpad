@@ -1,0 +1,42 @@
+
+
+{% extends 'cover.html' %}
+{% load static %}
+{% block content %}
+    <div class="mb-5">
+        {% if user.is_authenticated %}
+            {% if user.first_name %}
+                <div>Welcome {{ user.first_name }}!</div>
+            {% endif %}
+            You are signed in with {{ user.email }}
+        {% else %}
+            <div><small>Welcome!</small></div>
+        {% endif %}
+    </div>
+    <img src="{% static 'images/bnik.jpg' %}" class="img-fluid img-thumbnail" alt="Responsive image">
+    <h3 class="cover-heading">Python Backend Web Developer</h3>
+    <h6 class="cover-heading">I love designing and developing modern data-driven web applications that power and form the foundation for the apps, websites, and smart devices that people and businesses use every day. I am a Python enthusiast, and that is my primary choice of programming languages and the core of development frameworks I use.</h6>
+    <p class="lead m-3">
+        <i class="fab fa-ubuntu"></i>
+        <i class="fab fa-docker"></i>
+        <i class="fab fa-git-alt"></i>
+        <i class="fas fa-database"></i>
+        <i class="fab fa-python"></i>
+        Django
+        <i class="fab fa-html5"></i>
+        <i class="fab fa-css3"></i>
+        <i class="fab fa-bootstrap"></i>
+        <i class="fab fa-js"></i>
+        <i class="fab fa-react"></i>
+    </p>
+    <div class="mb-5">
+        <hr>
+        {% if user.is_authenticated %}
+            <div><a href="tel:+15102697230">510.269.7230</a></div>
+            <div><a href="mailto:m@bnik.org">m@bnik.org</a></div>
+        {% else %}
+            <div><small><a href="{% url 'account_login' %}">please sign in via github to contact me</a> </small></div>
+        {% endif %}
+    </div>
+{% endblock %}
+

@@ -160,9 +160,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Absolute file system path to use
 
 # User Management
 AUTH_USER_MODEL = 'users.CustomUser'  # CustomUser instead of the default User model
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'cover'
 # LOGOUT_REDIRECT_URL = 'home'  # not needed if allauth used
-ACCOUNT_LOGOUT_REDIRECT = 'home'  # being explicit with allauth logout redirect
+ACCOUNT_LOGOUT_REDIRECT = 'cover'  # being explicit with allauth logout redirect
 SITE_ID = 1
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
