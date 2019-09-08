@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',  # staticfiles with whitenoise
     'django.contrib.staticfiles',
     'django.contrib.sites',  # allauth config
     'django.contrib.humanize',
@@ -74,6 +75,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',  # corsheaders config
 
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # staticfiles with whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
