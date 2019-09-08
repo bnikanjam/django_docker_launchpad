@@ -1,8 +1,15 @@
+import os
+
 from django.contrib import admin
 from django.urls import path, include
 
 from django.conf.urls.static import static
 from django.conf import settings
+
+# Secret admin url if provided otherwise django's default
+ADMIN_URL = os.getenv('ADMIN_URL', 'admin')
+if not ADMIN_URL.endswith('/'):
+    ADMIN_URL += '/'
 
 urlpatterns = [
     path('accounts/', include('allauth.urls')),
@@ -14,7 +21,7 @@ urlpatterns = [
     path('orders/', include('orders.urls')),
     path('blog/', include('blog.urls')),
 
-    path('admin/', admin.site.urls),
+    path(ADMIN_URL, admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
