@@ -11,7 +11,7 @@ DEBUG = (os.environ.get('DEBUG') == 'True')
 # Deployment Web Security
 if ENVIRONMENT == 'production':
     DEBUG = False
-    ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
+    ALLOWED_HOSTS = ['blooming-sea-85491.herokuapp.com', 'localhost', '127.0.0.1']
     # Help guard against XSS attacks
     SECURE_BROWSER_XSS_FILTER = True
     # Protection against Clickjacking
@@ -28,6 +28,8 @@ if ENVIRONMENT == 'production':
     SESSION_COOKIE_SECURE = True
     # Force CSRF cookies over HTTPS
     CSRF_COOKIE_SECURE = True
+    #
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 else:
     ALLOWED_HOSTS = []
 
