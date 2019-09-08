@@ -7,6 +7,7 @@ services:
       - ENVIRONMENT=development
       - SECRET_KEY
       - DEBUG
+      - ADMIN_URL
       - SENDGRID_USERNAME
       - SENDGRID_PASSWORD
       - STRIPE_TEST_PUBLISHABLE_KEY
