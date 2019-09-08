@@ -1,4 +1,4 @@
-Web App Launchpad 
+Web App Launchpad Deploying on Heroku with Docker 
 -
 
 
@@ -8,3 +8,7 @@ without relying on nginx, Amazon S3 or any other external service.
 
 #####Gunicorn Python WSGI HTTP UNIX Server for both Dev and Prod
 >Production level WSGI server; Simply implemented, light on server resource usage, and fairly speedy. It natively supports WSGI, Django, and Paster.
+
+#####DJ-Database-URL
+>Simple utility to convert DATABASE_URL environment variable to configure database credentials and settings.
+>

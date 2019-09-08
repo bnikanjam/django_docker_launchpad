@@ -1,5 +1,7 @@
 import os
 
+import dj_database_url
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ENVIRONMENT = os.environ.get('ENVIRONMENT')
@@ -237,3 +239,8 @@ if ENVIRONMENT == 'development':
     INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
     if DEBUG:
         print('Docker machine IP:', INTERNAL_IPS)
+
+
+# Heroku
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
