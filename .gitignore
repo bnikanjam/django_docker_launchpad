@@ -20,7 +20,7 @@ __pycache__/
 # users uploaded files in dev
 media/
 # collected static files for production
-staticfiles/
+# staticfiles/
 logs/
 *.log
 *.pot
