@@ -1,6 +1,9 @@
 Web App Launchpad Deploying on Heroku with Docker 
 -
 
+-Building Docker Images with heroku.yml 
+https://devcenter.heroku.com/articles/build-docker-images-heroku-yml
+
 
 #####WhiteNoise for serving staticfiles 
 >Making static files a self-contained unit that can be deployed anywhere 
