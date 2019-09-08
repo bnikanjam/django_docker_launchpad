@@ -11,7 +11,7 @@ DEBUG = (os.environ.get('DEBUG') == 'True')
 # Deployment Web Security
 if ENVIRONMENT == 'production':
     DEBUG = False
-    ALLOWED_HOSTS = ['blooming-sea-85491.herokuapp.com', 'localhost', '127.0.0.1']
+    ALLOWED_HOSTS = ['blooming-sea-85491.herokuapp.com', 'www.bnik.org', 'localhost', '127.0.0.1']
     # Help guard against XSS attacks
     SECURE_BROWSER_XSS_FILTER = True
     # Protection against Clickjacking
