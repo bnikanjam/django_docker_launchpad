@@ -2,6 +2,9 @@ import os
 
 import dj_database_url
 
+from webapp.settings_social_oauth import SOCIALACCOUNT_PROVIDERS
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ENVIRONMENT = os.environ.get('ENVIRONMENT')
@@ -57,6 +60,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.linkedin_oauth2',
 
     # Local
     'users.apps.UsersConfig',
