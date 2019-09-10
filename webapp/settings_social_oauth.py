@@ -1,6 +1,5 @@
 """Settings for All Auth providers"""
 
-
 SOCIALACCOUNT_PROVIDERS = {
     'linkedin_oauth2': {
         'SCOPE': [
