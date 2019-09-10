@@ -13,7 +13,7 @@ DEBUG = (os.environ.get('DEBUG') == 'True')
 
 # Deployment Web Security
 if ENVIRONMENT == 'production':
-    DEBUG = False
+    DEBUG = 1
     ALLOWED_HOSTS = ['www.bnik.org', 'bnik.org']
     # Help guard against XSS attacks
     SECURE_BROWSER_XSS_FILTER = True
