@@ -27,13 +27,13 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #fafafa;
 }
 
 body {
   display: -ms-flexbox;
   display: flex;
-  color: #fff;
+  color: #585c63;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
