@@ -1,4 +1,4 @@
-Web App Launchpad Deploying on Heroku with Docker 
+Django Web App development in docker Starter with production security settings for Heroku deployment
 -
 
 ## Setup
@@ -21,17 +21,25 @@ Web App Launchpad Deploying on Heroku with Docker
 >docker-compose up
 
 #### Database migrations and create superuser
-#### Login to admin and add settings for social login oauth accounts
+>docker-compose exec web python manage.py makemigrations
+>docker-compose exec web python manage.py migrate
+>docker-compose exec web python manage.py createsuperuser
+#### Run the django web server
+>docker-compose up
+
+#### Login to admin with super user
+>Add settings for social login oauth accounts
+>Get familiar with database models
+>Creat test users and test data
 
 
 
 
 
-
+## Features
 
 ##### Custom admin url instead of django's default 'admin'
 >This is a recommended security measure not to reveal the admin login page
-
 
 ##### WhiteNoise for serving staticfiles 
 >Making static files a self-contained unit that can be deployed anywhere 
