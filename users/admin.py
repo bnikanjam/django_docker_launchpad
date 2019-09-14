@@ -7,10 +7,14 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm
 CustomUser = get_user_model()
 
 
+# TODO: Add user's short_bio field to admin when creating and updating a user
+
+
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
     list_display = ['email', 'username',]
+
 
 admin.site.register(CustomUser, CustomUserAdmin)
