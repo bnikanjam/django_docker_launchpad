@@ -1,63 +1,87 @@
 
 
 {% load static %}
+{% load socialaccount %}
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Python Web Development powered by Django">
-        <meta name="author" content="Babak Nikanjam">
-{#        <meta name="generator" content="Jekyll v3.8.5">#}
-        <title>Babak Nik | {% block page-title %}{% endblock %}</title>
-        <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/5727275770.js"></script>
-        <style>
-            .bd-placeholder-img {
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Python Web Development powered by Django">
+    <meta name="author" content="Babak Nikanjam">
+    <title>Babak Nik | {% block page-title %}{% endblock %}</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5727275770.js"></script>
+    <style>
+        .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            }
-            @media (min-width: 768px) {
+        }
+        @media (min-width: 768px) {
             .bd-placeholder-img-lg {
-            font-size: 3.5rem;
+                font-size: 3.5rem;
             }
-            }
-        </style>
-        <link href="{% static 'css/cover.css' %}" rel="stylesheet">
-    </head>
-    <body class="text-center">
-        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-            <header class="masthead mb-auto">
-                <div class="inner">
-                    <h5 class="masthead-brand">babak nikanjam</h5>
-                    <nav class="nav nav-masthead justify-content-center">
-                        <a class="nav-link active" href="{% url 'cover' %}"><i class="fas fa-home"></i></a>
-                        {% if user.is_authenticated %}
-                        <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
-                        <a class="nav-link" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i></a>
-                        {% else %}
-                        <a class="nav-link" href="{% url 'account_login' %}"><i class="fas fa-door-open"></i></a>
-                        {% endif %}
-                    </nav>
-                </div>
-            </header>
-            <main role="main" class="inner cover">
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-                {% block content %}{% endblock %}
-            </main>
-            <footer class="mastfoot mt-auto">
-                <div class="inner">
-                    <p>Let's Make Something Awesome!</p>
-                </div>
-            </footer>
+        }
+    </style>
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+</head>
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h5 class="masthead-brand">babak nikanjam</h5>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="{% url 'cover' %}"><i class="fas fa-home"></i></a>
+                {% if user.is_authenticated %}
+                    <div class="nav-link dropdown">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
+                            <a class="dropdown-item" href="{% url 'post-create' %}"><i class="fas fa-plus"></i> New Post</a>
+                            <a class="dropdown-item" href="{% url 'post-create' %}"><i class="far fa-edit"></i> Edit Profile</a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+                        </div>
+                    </div>
+                {% else %}
+
+                    <div class="nav-link dropdown">
+                        <a class="dropdown-toggle" role="button" id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-door-open"></i> Sign in
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
+                            <a class="dropdown-item" href="{% provider_login_url 'github' %}"><i class="fab fa-github"></i> Sign in with GitHub</a>
+                            <a class="dropdown-item" href="{% provider_login_url 'linkedin_oauth2' %}"><i class="fab fa-linkedin"></i> Sign in with LinkedIn</a>
+                            <a class="dropdown-item" href="{% url 'account_login' %}"><i class="fas fa-at"></i> Sign in with Email</a>
+                            <a class="dropdown-item" href="{% url 'account_signup' %}"><i class="fas fa-plus"></i> Sign up with Email</a>
+                        </div>
+                    </div>
+
+                {% endif %}
+            </nav>
         </div>
-    </body>
+    </header>
+    <main role="main" class="inner cover">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Let's Make Something Awesome!</p>
+        </div>
+    </footer>
+</div>
+<script src="{% static 'bootstrap/jquery-3.4.1.min.js' %}" ></script>
+<script src="{% static 'bootstrap/popper.js' %}" ></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}" ></script>
+</body>
 </html>
+
