@@ -26,11 +26,11 @@ class Post(BaseModel):
         verbose_name_plural = 'posts'
 
     def __str__(self):
-        return f'Blog post by: `{self.author}` titled:  `{self.title[:64]}`'
+        return f'{self.author} -> {self.title[:64]}'
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
         self.slug = slugify(str(self.title))
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse('post-detail', args=[self.slug])

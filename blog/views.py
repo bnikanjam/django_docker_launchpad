@@ -6,6 +6,15 @@ from django.utils import timezone
 
 class PostCreateView(CreateView):
     model = Post
+    # context_object_name = 'form'
+    template_name = 'blog/post_create.html'
+    fields = ['title', 'content',]
+    success_url = '/blog/'
+
+    # Set author
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super(PostCreateView, self).form_valid(form)
 
 
 class PostListView(ListView):

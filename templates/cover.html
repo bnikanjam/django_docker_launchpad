@@ -35,7 +35,8 @@
         <div class="inner">
             <h5 class="masthead-brand">babak nikanjam</h5>
             <nav class="nav nav-masthead justify-content-center">
-                <a class="nav-link active" href="{% url 'cover' %}"><i class="fas fa-home"></i></a>
+                <a class="nav-link" href="{% url 'cover' %}"><i class="fas fa-home"></i></a>
+                <a class="nav-link" href="{% url 'post-list' %}"><i class="fas fa-blog"></i></a>
                 {% if user.is_authenticated %}
                     <div class="nav-link dropdown">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
