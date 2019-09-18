@@ -1,0 +1,14 @@
+{% extends 'cover.html' %}
+{% load static %}
+
+{% block title %}
+    Resume
+{% endblock %}
+
+{% block content %}
+
+    <a href="{% url 'cover' %}" class="btn btn-outline-secondary m-1">Cancel</a>
+    <a href="{% static 'pdfs/babak_nikanjam_resume.pdf' %}" download="" class="btn btn-outline-success m-1">Download Resume</a>
+
+{% endblock %}
+

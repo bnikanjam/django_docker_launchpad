@@ -32,8 +32,8 @@
     <div class="mb-5">
         <hr>
         {% if user.is_authenticated %}
-            <div><a href="tel:+15102697230">510.269.7230</a></div>
-            <div><a href="mailto:m@bnik.org">m@bnik.org</a></div>
+            <div><a href="tel:+15102697230"><i class="fas fa-mobile-alt"></i> 510.269.7230</a></div>
+            <div><a href="mailto:m@bnik.org"><i class="far fa-envelope"></i>  m@bnik.org</a></div>
         {% else %}
             <div><small><a href="{% url 'account_login' %}">please sign in via github to contact me</a> </small></div>
         {% endif %}

@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Python Web Development powered by Django">
     <meta name="author" content="Babak Nikanjam">
-    <title>Babak Nik | {% block page-title %}{% endblock %}</title>
+    <title>
+        {% block title %}{% endblock %} - Babak Nik Weblab
+    </title>
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5727275770.js"></script>
     <style>
@@ -44,7 +46,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
                             <a class="dropdown-item" href="{% url 'post-create' %}"><i class="fas fa-plus"></i> New Post</a>
-                            <a class="dropdown-item" href="{% url 'post-create' %}"><i class="far fa-edit"></i> Edit Profile</a>
+{#                            <a class="dropdown-item" href="{% url 'post-create' %}"><i class="far fa-edit"></i> Edit Profile</a>#}
                             <a class="dropdown-item" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Sign out</a>
                         </div>
                     </div>
