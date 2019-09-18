@@ -1,12 +1,18 @@
-
-
 {% extends 'cover.html' %}
 {% load socialaccount %}
 {% load crispy_forms_tags %}
+
 {% block title %}
-    <title>Sign in</title>
-{% endblock title %}
+    Sign in
+{% endblock %}
+
 {% block content %}
+
+    <div class="card-body border btn-lg text-center">
+        <p><a href="{% provider_login_url 'github' %}"><i class="fab fa-github"></i> Sign in with GitHub</a></p>
+        <p><a href="{% provider_login_url 'linkedin_oauth2' %}"><i class="fab fa-linkedin"></i> </i> Sign in with Linkedin</a></p>
+    </div>
+
     <form class="" method="post">
         {% csrf_token %}
         <fieldset class="form-text mt-5">
@@ -33,4 +39,3 @@
 {#        </div>#}
     </div>
 {% endblock %}
-

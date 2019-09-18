@@ -1,9 +1,7 @@
 {% extends 'cover.html' %}
 
-{% load crispy_forms_tags %}
-
 {% block title %}
-    <title>Sign out</title>
+    Sign out
 {% endblock %}
 
 {% block content %}
@@ -11,7 +9,7 @@
         <h6>Are you sure you want to sign out?</h6>
         <form method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
-            {{ form|crispy }}
+            {{ form }}
             <a href="{% url 'cover' %}" class="btn btn-light m-1">Cancel</a>
             <button type="submit" class="btn btn-danger m-1">Yes, Sign me out</button>
         </form>
