@@ -12,8 +12,8 @@
         <form method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
             {{ form|crispy }}
-            <a href="{% url 'cover' %}" class="btn btn-light btn-sm">cancel</a>
-            <button type="submit" class="btn btn-danger btn-sm ml-2">Yes, sign me out</button>
+            <a href="{% url 'cover' %}" class="btn btn-light m-1">Cancel</a>
+            <button type="submit" class="btn btn-danger m-1">Yes, Sign me out</button>
         </form>
     </div>
 {% endblock %}

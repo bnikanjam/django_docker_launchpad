@@ -1,0 +1,15 @@
+{% extends 'cover.html' %}
+
+{% block content %}
+    {% include 'blog/post_detail_core.html' %}
+    <div>
+        <hr>
+        <form method="post">
+            {% csrf_token %}
+            <h5>Are you sure you want to delete this post?</h5>
+            <a class="btn btn-outline-dark text-muted m-1" href="{% url 'post-detail' post.slug %}">cancel</a>
+            <button class="btn btn-outline-danger m-1" type="submit">Yes, Delete</button>
+        </form>
+    </div>
+{% endblock %}
+

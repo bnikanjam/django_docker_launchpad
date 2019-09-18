@@ -1,11 +1,10 @@
-
-
 {% extends 'cover.html' %}
 {% load crispy_forms_tags %}
-{% load crispy_forms_tags %}
+
 {% block title %}
     <title>Sign Up</title>
 {% endblock title %}
+
 {% block content %}
     <form method="post">
         {% csrf_token %}
@@ -15,9 +14,9 @@
         </fieldset>
         <div>
             <small>
-                <a class="pr-2 text-muted" href="{% url 'cover' %}">cancel</a>
+                <a class="pr-2 text-muted m-1" href="{% url 'cover' %}">Cancel</a>
             </small>
-            <button type="submit" class="btn btn-info">Sign me up!</button>
+            <button type="submit" class="btn btn-success m-1">Sign me up!</button>
         </div>
     </form>
 {% endblock %}

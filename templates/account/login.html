@@ -15,9 +15,9 @@
         </fieldset>
         <div class="pb-3">
             <small>
-                <a class="pr-2 text-muted" href="{% url 'cover' %}">cancel</a>
+                <a class="pr-2 text-muted m-1" href="{% url 'cover' %}">Cancel</a>
             </small>
-            <button type="submit" class="btn btn-info">Let me in!</button>
+            <button type="submit" class="btn btn-success m-1">Yes Let me in!</button>
         </div>
     </form>
     <div class="card-body text-center border">
@@ -26,11 +26,11 @@
                 Want an Account?<a class="ml-2" href="{% url 'account_signup' %}">Sign-Up Now</a>
             </small>
         </div>
-        <div class="btn-outline-light">
-            <small class="text-muted">
-                Can't Sign in?<a class="ml-2" href="{% url 'account_signup' %}">Reset Password</a>
-            </small>
-        </div>
+{#        <div class="btn-outline-light">#}
+{#            <small class="text-muted">#}
+{#                Can't Sign in?<a class="ml-2" href="{% url 'account_signup' %}">Reset Password</a>#}
+{#            </small>#}
+{#        </div>#}
     </div>
 {% endblock %}
 

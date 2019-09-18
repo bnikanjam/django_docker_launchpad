@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+
+{% extends 'cover.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Updating Your Post</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <a class="btn btn-outline-dark text-muted m-1" href="{% url 'post-detail' post.slug %}">cancel</a>
+                <button class="btn btn-outline-success m-1" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
