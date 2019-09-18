@@ -42,7 +42,7 @@
                         <a class="dropdown-toggle" id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user"></i> {{ user.first_name }}
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
                             <a class="dropdown-item" href="{% url 'post-create' %}"><i class="fas fa-plus"></i> New Post</a>
                             <a class="dropdown-item" href="{% url 'post-create' %}"><i class="far fa-edit"></i> Edit Profile</a>
                             <a class="dropdown-item" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Sign out</a>
@@ -50,14 +50,14 @@
                     </div>
 
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
+{#                    <li class="nav-item dropdown">#}
+{#                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>#}
+{#                        <div class="dropdown-menu" aria-labelledby="dropdown01">#}
+{#                            <a class="dropdown-item" href="#">Action</a>#}
+{#                            <a class="dropdown-item" href="#">Another action</a>#}
+{#                            <a class="dropdown-item" href="#">Something else here</a>#}
+{#                        </div>#}
+{#                    </li>#}
 
                 {% else %}
 

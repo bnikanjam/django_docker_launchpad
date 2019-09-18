@@ -12,8 +12,7 @@ services:
       - SENDGRID_PASSWORD
       - STRIPE_TEST_PUBLISHABLE_KEY
       - STRIPE_TEST_SECRET_KEY
-    # command: python /code/manage.py runserver 0.0.0.0:8000
-    command: gunicorn webapp.wsgi -b 0.0.0.0:8000
+    command: python /code/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
