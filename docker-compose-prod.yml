@@ -6,7 +6,7 @@ services:
     environment:
       - ENVIRONMENT=production
       - SECRET_KEY
-      - DEBUG=0
+      - DEBUG=1
       - ADMIN_URL
       - SENDGRID_USERNAME
       - SENDGRID_PASSWORD
