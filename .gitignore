@@ -32,7 +32,5 @@ staticfiles
 recyclebin
 
 
-
-
-!/media/
 !/assets/pdfs/
+!/media/uploads/*
