@@ -4,6 +4,8 @@ from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.utils.text import slugify
 
+from PIL import Image
+
 
 class BaseModel(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
@@ -20,6 +22,7 @@ class Post(BaseModel):
     title = models.CharField(max_length=127)
     slug = models.SlugField(max_length=127, unique=True)
     description = models.CharField(max_length=255, blank=True, null=True)
+    header_img = models.ImageField(default='blog_images/default_header.jpeg', upload_to='blog_images',)
 
     class Meta(BaseModel.Meta):
         verbose_name = 'post'
@@ -32,8 +35,14 @@ class Post(BaseModel):
         self.slug = slugify(str(self.title))
         super().save(*args, **kwargs)
 
+        img_size = (600, 1200)
+        img = Image.open(self.header_img.path)
+        img.thumbnail(img_size)
+        img.save(self.header_img.path)
+
     def get_absolute_url(self):
         return reverse('post-detail', args=[self.slug])
+
 
 
 class Review(BaseModel):

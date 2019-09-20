@@ -33,7 +33,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     # context_object_name = 'form'
     template_name = 'blog/post_create.html'
-    fields = ['title', 'content',]
+    fields = ['title', 'content', 'header_img']
     success_url = '/blog/'
 
     # Set author
@@ -45,7 +45,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     template_name = 'blog/post_update.html'
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'header_img']
 
     # set author
     def form_valid(self, form):

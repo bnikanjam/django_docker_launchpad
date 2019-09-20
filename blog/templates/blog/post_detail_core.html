@@ -1,11 +1,9 @@
 {% load humanize %}
-
 <article class="media content-section">
-    <div class="">
-{#        <img class="rounded-circle article-img" src="{{ object.author.profile.image.url}}">#}
-    </div>
+    <img src="{{ post. }}">
     <div class="media-body">
-        <h5 class="article-title">{{ post.title }}</h5>
+        <h5 class="article-title">{{ post.title|title }}</h5>
+            <img class="img-fluid" src="{{ post.header_img.url }}">
             <div class="article-metadata">
             <small class="text-muted">
                 Last updated {{ post.updated_at|naturalday}} | {{ post.author.first_name }} {{ post.author.last_name }}
