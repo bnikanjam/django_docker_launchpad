@@ -1,4 +1,4 @@
-{% extends 'cover.html' %}
+{% extends 'home.html' %}
 {% load crispy_forms_tags %}
 
 {% block title %}
@@ -14,7 +14,7 @@
         </fieldset>
         <div>
             <small>
-                <a class="pr-2 text-muted m-1" href="{% url 'cover' %}">Cancel</a>
+                <a class="pr-2 text-muted m-1" href="{% url 'home' %}">Cancel</a>
             </small>
             <button type="submit" class="btn btn-success m-1">Sign me up!</button>
         </div>

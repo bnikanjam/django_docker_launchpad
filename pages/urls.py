@@ -4,6 +4,6 @@ from pages.views import HomePageView, DownloadResumeView
 
 
 urlpatterns = [
-    path('', HomePageView.as_view(), name='cover'),
+    path('', HomePageView.as_view(), name='home'),
     path('resume/', DownloadResumeView.as_view(), name='resume'),
 ]

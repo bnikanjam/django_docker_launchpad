@@ -1,5 +1,5 @@
-{% extends 'cover.html' %}
-{% load socialaccount %}
+{% extends 'home.html' %}
+{#{% load socialaccount %}#}
 {% load crispy_forms_tags %}
 
 {% block title %}
@@ -8,20 +8,20 @@
 
 {% block content %}
 
-    <div class="card-body border btn-lg text-center">
-        <p><a href="{% provider_login_url 'github' %}"><i class="fab fa-github"></i> Sign in with GitHub</a></p>
-        <p><a href="{% provider_login_url 'linkedin_oauth2' %}"><i class="fab fa-linkedin"></i> </i> Sign in with Linkedin</a></p>
-    </div>
+{#    <div class="card-body border btn-lg text-center">#}
+{#        <p><a href="{% provider_login_url 'github' %}"><i class="fab fa-github"></i> Sign in with GitHub</a></p>#}
+{#        <p><a href="{% provider_login_url 'linkedin_oauth2' %}"><i class="fab fa-linkedin"></i> </i> Sign in with Linkedin</a></p>#}
+{#    </div>#}
 
     <form class="" method="post">
         {% csrf_token %}
+         <h3>Sign in with Email</h3>
         <fieldset class="form-text mt-5">
-            <h5>Sign in with Email</h5>
             {{ form|crispy }}
         </fieldset>
         <div class="pb-3">
             <small>
-                <a class="pr-2 text-muted m-1" href="{% url 'cover' %}">Cancel</a>
+                <a class="pr-2 text-muted m-1" href="{% url 'home' %}">Cancel</a>
             </small>
             <button type="submit" class="btn btn-success m-1">Yes Let me in!</button>
         </div>

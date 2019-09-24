@@ -1,4 +1,4 @@
-{% extends 'cover.html' %}
+{% extends 'home.html' %}
 
 {% block title %}
     Sign out
@@ -10,7 +10,7 @@
         <form method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
             {{ form }}
-            <a href="{% url 'cover' %}" class="btn btn-light m-1">Cancel</a>
+            <a href="{% url 'home' %}" class="btn btn-light m-1">Cancel</a>
             <button type="submit" class="btn btn-danger m-1">Yes, Sign me out</button>
         </form>
     </div>
