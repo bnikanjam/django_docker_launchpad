@@ -35,10 +35,10 @@ class Post(BaseModel):
     def save(self, *args, **kwargs):
         self.slug = slugify(str(self.title))
         super().save(*args, **kwargs)
-
-        (width, height) = (900, 600)
-        img = Image.open(self.header_img.path)
-        img.resize((width, height)).save(self.header_img.path)
+        # local image resizing
+        # (width, height) = (900, 600)
+        # img = Image.open(self.header_img.path)
+        # img.resize((width, height)).save(self.header_img.path)
 
     def get_absolute_url(self):
         return reverse('post-detail', args=[self.slug])
