@@ -7,6 +7,8 @@ Django Docker Launchpad
 - #### Heroku PostgreSQL for Production
 - #### Heroku Deployment via Docker
 - #### Amazon S3 for users uploads (media files)
+- #### User email signup and OAuth social login with GitHub
+
 
 ### Tools and Settings:
 ##### Django Debug Toolbar and Django Extension on Development

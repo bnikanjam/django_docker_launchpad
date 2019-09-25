@@ -3,6 +3,7 @@
 {% extends 'home.html' %}
 {% load static %}
 {% block content %}
+
     <div class="mb-5">
         {% if user.is_authenticated %}
             {% if user.first_name %}
@@ -13,22 +14,36 @@
             <div><small>Welcome!</small></div>
         {% endif %}
     </div>
-    <img src="{% static 'images/bnik.jpg' %}" class="img-fluid img-thumbnail" alt="Responsive image">
-    <h3 class="cover-heading">Python Backend Web Developer</h3>
-    <h6 class="cover-heading">I love designing and developing modern data-driven web applications that power and form the foundation for the apps, websites, and smart devices that people and businesses use every day. I am a Python enthusiast, and that is my primary choice of programming languages and the core of development frameworks I use.</h6>
-    <p class="lead m-3">
-        <i class="fab fa-ubuntu"></i>
-        <i class="fab fa-docker"></i>
-        <i class="fab fa-git-alt"></i>
-        <i class="fas fa-database"></i>
-        <i class="fab fa-python"></i>
-        Django
-        <i class="fab fa-html5"></i>
-        <i class="fab fa-css3"></i>
-        <i class="fab fa-bootstrap"></i>
-        <i class="fab fa-js"></i>
-        <i class="fab fa-react"></i>
-    </p>
+
+    <div class="card mb-3" style="max-width: 450px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{% static 'images/bnik.jpg' %}" class="card-img img-thumbnail" alt="My profile photo">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Backend Web Developer</h5>
+                    <p class="card-text">
+                    <p>I am fascinated with designing and developing data-driven web apps (solutions) that power and form the foundation of our new way of life and experiences. I am a Python enthusiast and love its design philosophy, history and its evolving community.</p>
+                    <p>I also think using established, tested, extensible, evolving and battery included frameworks that can perform at great scale are among best choices for web development.</p><p>Combine the last two paragraphs and we arrive at Django! <i class="far fa-laugh-wink"></i></p>
+                    <p class="lead m-3">
+                        <i class="fab fa-ubuntu"></i>
+                        <i class="fab fa-docker"></i>
+                        <i class="fab fa-git-alt"></i>
+                        <i class="fas fa-database"></i>
+                        <i class="fab fa-python"></i>
+                        Django
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3"></i>
+                        <i class="fab fa-bootstrap"></i>
+                        <i class="fab fa-js"></i>
+                        <i class="fab fa-react"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="mb-5">
         <hr>
         {% if user.is_authenticated %}
