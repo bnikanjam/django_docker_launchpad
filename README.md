@@ -1,44 +1,18 @@
-Django Web App development in docker Starter with production security settings for Heroku deployment
+Django Docker Launchpad
 -
+## Main Features
+- #### Docker Django Web App Development
+- #### Docker Django REST API Web App Development
+- #### Production Security Settings for both Django and Django REST
+- #### Heroku PostgreSQL for Production
+- #### Heroku Deployment via Docker
+- #### Amazon S3 for users uploads (media files)
 
-## Setup
-#### clone the repo to your local computer
->git clone ...
-#### provide credentials and security settings via environmental variables in the .env file
->ENVIRONMENT for production, development or other. When in development DEBUG will be set to TRUE
->SECRET_KEY
->ADMIN_URL
->Email provider credentials
->AMAZON S3 credentials for user files (media files)
+### Tools and Settings:
+##### Django Debug Toolbar and Django Extension on Development
+>This is a recommended security measure not to reveal the admin login page
 
-#### Pipenv virtual environment
->pipenv shell
-
-#### Build the docker containers
->docker build .
-
-#### Run the app within docker
->docker-compose up
-
-#### Database migrations and create superuser
->docker-compose exec web python manage.py makemigrations
->docker-compose exec web python manage.py migrate
->docker-compose exec web python manage.py createsuperuser
-#### Run the django web server
->docker-compose up
-
-#### Login to admin with super user
->Add settings for social login oauth accounts
->Get familiar with database models
->Creat test users and test data
-
-
-
-
-
-## Features
-
-##### Custom admin url instead of django's default 'admin'
+##### Custom admin url (instead of django's default 'admin')
 >This is a recommended security measure not to reveal the admin login page
 
 ##### WhiteNoise for serving staticfiles 
