@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    WebApp-Home
+
 {% endblock title %}
 
 {% block content %}
@@ -24,13 +24,7 @@
 {% endblock content %}
 
 {% block side-content %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
+    {% include 'flash_messages.html' %}
 {#    <p class='text-muted'>Recent Projects#}
 {#    <ul class="list-group">#}
 {#        <a href="#">#}

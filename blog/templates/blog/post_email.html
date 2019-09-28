@@ -1,0 +1,32 @@
+{% extends "home.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+    Email {{ post.title }}
+{% endblock %}
+
+
+{% block content %}
+    {% include 'blog/post_detail_core.html' %}
+    {% if sent %}
+        {% include 'blog/post_detail_user_actions.html' %}
+    {% endif %}
+{% endblock %}
+
+
+{% block side-content %}
+    {% include 'flash_messages.html' %}
+    {% if sent %}
+        <h6 class="card-header">
+            {{ post.title }} was successfully emailed to {{ form.cleaned_data.email_to }}
+        </h6>
+    {% else %}
+        <h5>Share "{{ post.title }}" by email</h5>
+        <form action="." method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="btn btn-outline-primary" type="submit" value="Send Email">
+        </form>
+    {% endif %}
+{% endblock %}
