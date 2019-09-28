@@ -2,7 +2,7 @@
 
 {#    <a class="btn btn-outline-primary m-1" href="#">Tweet</a>#}
 {#    <a class="btn btn-outline-primary  m-1" href="#">Text</a>#}
-{#    <a class="btn btn-outline-primary m-1" href="#">Email</a>#}
+    <a class="btn btn-outline-primary m-1" href="{% url 'post-email' post.slug %}">Email</a>
 
     {% if post.author == user %}
         <a class="btn btn-outline-success m-1" href="{% url 'post-update' post.slug %}">Update</a>

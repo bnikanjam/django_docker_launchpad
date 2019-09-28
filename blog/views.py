@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Review
 from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
+from .forms import EmailPostForm
+from django.core.mail import send_mail
 
 
 class PostListView(ListView):
@@ -77,3 +80,30 @@ class PostDeleteView(DeleteView):
             return True
         else:
             return False
+
+
+def post_email(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    sent = False
+
+    if request.method == 'POST':
+        form = EmailPostForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            # Compose email
+            post_url = request.build_absolute_uri(post.get_absolute_url())
+            subject = f'{cd["name"]} ({cd["email_from"]}) recommends you reading "{post.title}"'
+            message = f'Read "{post.title}" at {post_url}\n\n{cd["name"]}\'s comments: {cd["comments"]}'
+            email_from = cd.get('email_from')
+            email_to = [cd.get('email_to')]
+            send_mail(subject, message, email_from, email_to, fail_silently=False)
+            sent = True
+    else:
+        form = EmailPostForm()
+
+    context = {
+        'post': post,
+        'form': form,
+        'sent': sent,
+    }
+    return render(request, 'blog/post_email.html', context)

@@ -2,6 +2,7 @@ from django.urls import path, include
 
 from .views_api import PostAPIList, PostAPIDetail
 from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
+from .views import post_email
 
 urlpatterns = [
     # ex: blog/new/
@@ -15,6 +16,9 @@ urlpatterns = [
     path('<slug:slug>/update/', PostUpdateView.as_view(), name='post-update'),
     # ex: blog/title/delete/
     path('<slug:slug>/delete/', PostDeleteView.as_view(), name='post-delete'),
+    # ex: blog/title/email/
+    path('<slug:slug>/email/', post_email, name='post-email'),
+
 
     # ex: blog/api/v1/
     path('api/v1/', PostAPIList.as_view()),
