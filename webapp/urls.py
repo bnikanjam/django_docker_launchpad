@@ -16,9 +16,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),  # the 'api-auth/' route could be anything else
 
     path('', include('pages.urls')),
-    path('books/', include('books.urls')),
-    path('books-api/', include('books_api.urls')),
-    path('orders/', include('orders.urls')),
     path('blog/', include('blog.urls')),
 
     path(ADMIN_URL, admin.site.urls),

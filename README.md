@@ -1,29 +1,27 @@
 Django Docker Launchpad
 -
-## Main Features
-- #### Docker Django Web App Development
-- #### Docker Django REST API Web App Development
-- #### Production Security Settings for both Django and Django REST
-- #### Heroku PostgreSQL for Production
-- #### Heroku Deployment via Docker
-- #### Amazon S3 for users uploads (media files)
-- #### User email signup and OAuth social login with GitHub
 
 
-### Tools and Settings:
-##### Django Debug Toolbar and Django Extension on Development
->This is a recommended security measure not to reveal the admin login page
+*Launch your new Django WebApp Development within Docker in 3 minutes. This project is a template to jump start production ready Django WebApps with many of expected security settings from the first commit.*
 
-##### Custom admin url (instead of django's default 'admin')
->This is a recommended security measure not to reveal the admin login page
+100% security pass on www.ponycheckup.com security checkup.
 
-##### WhiteNoise for serving staticfiles 
->Making static files a self-contained unit that can be deployed anywhere 
-without relying on nginx, Amazon S3 or any other external service.
+Includes Django REST framework and JS React for REST and API first design approaches.
 
-##### Gunicorn Python WSGI HTTP UNIX Server 
->Production level WSGI server; Simply implemented, light on server resource usage, and fairly speedy. It natively supports WSGI, Django, and Paster.
+Containerized PostgreSQL as well as Django app in docker.
 
-##### DJ-Database-URL
->Simple utility to convert DATABASE_URL environment variable to configure database credentials and settings.
->
+Integrated django-allauth for authentication, registration, account management, and Social-Accounts authentication.
+
+Sending email over SMTP with SendGrid.
+
+Equipped with Django-Debug-Toolbar and Django-Extension development tools when in development!
+
+Up and running with AWS S3 for users uploads (media files).
+
+Up and running with WhiteNoise for serving staticfiles.
+
+Includes Bootstrap 4.3 source Sass and JavaScript files.
+
+Deployment via docker on Heroku.
+
+Gunicorn Python WSGI HTTP UNIX Server.

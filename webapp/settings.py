@@ -66,9 +66,6 @@ INSTALLED_APPS = [
     # Local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
-    'books.apps.BooksConfig',
-    'books_api.apps.BooksApiConfig',
-    'orders.apps.OrdersConfig',
     'blog.apps.BlogConfig',
 ]
 DEVELOPMENT_INSTALLED_APPS = [

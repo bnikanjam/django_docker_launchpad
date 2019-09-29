@@ -31,7 +31,4 @@ celerybeat-schedule
 staticfiles
 recyclebin
 
-
-!/assets/pdfs/
-!/media/uploads/*
 !/docs/AmazonS3_CORS_Configuration.xml

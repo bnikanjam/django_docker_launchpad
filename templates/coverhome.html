@@ -1,7 +1,7 @@
-
-
 {% extends 'home.html' %}
 {% load static %}
+
+
 {% block content %}
 
     <div class="mb-5">
@@ -18,24 +18,36 @@
     <div class="card mb-3" style="max-width: 450px;">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="{% static 'images/bnik.jpg' %}" class="card-img img-thumbnail" alt="My profile photo">
+                <img src="{% static 'images/django+docker.jpg' %}" class="card-img img-thumbnail" alt="WebApp Logo">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">Backend Web Developer</h5>
+                    <h5 class="card-title">Launch your new Django WebApp Development within Docker in 3 minutes.</h5>
                     <p class="card-text">
-                    <p>I am fascinated with designing and developing data-driven web apps (solutions) that power and form the foundation of our new way of life and experiences. I am a Python enthusiast and love its design philosophy, history and its evolving community.</p>
-                    <p>I also think using established, tested, extensible, evolving and battery included frameworks that can perform at great scale are among best choices for web development.</p><p>Combine the last two paragraphs and we arrive at Django! <i class="far fa-laugh-wink"></i></p>
+                    <p></p>
+                    <p>This project is a template to jump start production ready Django WebApps with many of expected security settings from the first commit.</p>
+                    <p>100% security pass on www.ponycheckup.com security checkup.</p>
+                    <p>Includes Django REST framework and JS React for REST and API first design approaches. </p>
+                    <p>Containerized PostgreSQL as well as Django app in docker.</p>
+                    <p>Integrated django-allauth for authentication, registration, account management, and Social-Accounts authentication.</p>
+                    <p>Sending email over SMTP with SendGrid</p>
+                    <p>Equipped with Django-Debug-Toolbar and Django-Extension development tools when in development!</p>
+                    <p>Up and running with AWS S3 for users uploads (media files).</p>
+                    <p>Up and running with WhiteNoise for serving staticfiles.</p>
+                    <p>Includes Bootstrap 4.3 source Sass and JavaScript files.</p>
+                    <p>Deployment via docker on Heroku.</p>
+                    <p>Gunicorn Python WSGI HTTP UNIX Server.</p>
                     <p class="lead m-3">
+                        Django +
                         <i class="fab fa-ubuntu"></i>
                         <i class="fab fa-docker"></i>
                         <i class="fab fa-git-alt"></i>
                         <i class="fas fa-database"></i>
                         <i class="fab fa-python"></i>
-                        Django
                         <i class="fab fa-html5"></i>
                         <i class="fab fa-css3"></i>
                         <i class="fab fa-bootstrap"></i>
+                        <i class="fab fa-aws"></i>
                         <i class="fab fa-js"></i>
                         <i class="fab fa-react"></i>
                     </p>
@@ -46,12 +58,7 @@
 
     <div class="mb-5">
         <hr>
-        {% if user.is_authenticated %}
-            <div><a href="tel:+15102697230"><i class="fas fa-mobile-alt"></i> 510.269.7230</a></div>
-            <div><a href="mailto:m@bnik.org"><i class="far fa-envelope"></i>  m@bnik.org</a></div>
-        {% else %}
-            <div><small><a href="{% url 'account_login' %}">please sign in via github to contact me</a> </small></div>
-        {% endif %}
+        <p>MIT License</p>
     </div>
 {% endblock %}
 
