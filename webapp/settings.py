@@ -14,7 +14,7 @@ DEBUG = (os.environ.get('DEBUG') == 'True')
 # Deployment Web Security
 if ENVIRONMENT == 'production':
     DEBUG = (os.environ.get('DEBUG') == 'True')
-    ALLOWED_HOSTS = ['www.bnik.org', 'bnik.org', 'blooming-sea-85491.herokuapp.com']
+    ALLOWED_HOSTS = ['https://django-docker-launchpad.herokuapp.com']
     # Help guard against XSS attacks
     SECURE_BROWSER_XSS_FILTER = True
     # Protection against Clickjacking
