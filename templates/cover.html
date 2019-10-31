@@ -25,6 +25,7 @@
             -ms-user-select: none;
             user-select: none;
         }
+
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -43,23 +44,29 @@
                 <a class="nav-link" href="{% url 'post-list' %}"><i class="fas fa-blog"></i></a>
                 {% if user.is_authenticated %}
                     <div class="nav-link dropdown">
-                        <a class="dropdown-toggle" id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="dropdown-toggle" id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
                             <i class="fas fa-user"></i> {{ user.first_name }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
                             <a class="dropdown-item" href="{% url 'post-create' %}"><i class="fas fa-plus"></i> New Post</a>
-                            <a class="dropdown-item" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}"><i
+                                    class="fas fa-sign-out-alt"></i> Sign out</a>
                         </div>
                     </div>
                 {% else %}
                     <div class="nav-link dropdown">
-                        <a class="dropdown-toggle" role="button" id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="dropdown-toggle" role="button" id="dropdownUserMenu" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-door-open"></i> Sign in
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
-                            <a class="dropdown-item" href="{% provider_login_url 'github' %}"><i class="fab fa-github"></i> Sign in with GitHub</a>
-                            <a class="dropdown-item" href="{% url 'account_login' %}"><i class="fas fa-at"></i> Sign in with Email</a>
-                            <a class="dropdown-item" href="{% url 'account_signup' %}"><i class="fas fa-plus"></i> Sign up with Email</a>
+                            <a class="dropdown-item" href="{% provider_login_url 'github' %}"><i
+                                    class="fab fa-github"></i> Sign in with GitHub</a>
+                            <a class="dropdown-item" href="{% url 'account_login' %}"><i class="fas fa-at"></i> Sign in
+                                with Email</a>
+                            <a class="dropdown-item" href="{% url 'account_signup' %}"><i class="fas fa-plus"></i> Sign
+                                up with Email</a>
                         </div>
                     </div>
                 {% endif %}
@@ -75,8 +82,8 @@
         </div>
     </footer>
 </div>
-<script src="{% static 'bootstrap/jquery-3.4.1.min.js' %}" ></script>
-<script src="{% static 'bootstrap/popper.js' %}" ></script>
-<script src="{% static 'bootstrap/js/bootstrap.min.js' %}" ></script>
+<script src="{% static 'bootstrap/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'bootstrap/popper.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 </html>

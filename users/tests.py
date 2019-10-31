@@ -45,7 +45,7 @@ class SignupPageTests(TestCase):
         self.assertNotContains(self.response, 'Hi there! I should not be on the page.')
 
 
-class SignupTests(TestCase): # new
+class SignupTests(TestCase):  # new
 
     username = 'newuser'
     email = 'newuser@email.com'

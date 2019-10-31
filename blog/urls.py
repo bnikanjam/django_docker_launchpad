@@ -19,7 +19,6 @@ urlpatterns = [
     # ex: blog/title/email/
     path('<slug:slug>/email/', post_email, name='post-email'),
 
-
     # ex: blog/api/v1/
     path('api/v1/', PostAPIList.as_view()),
     # ex: blog/api/v1/ab-testing/

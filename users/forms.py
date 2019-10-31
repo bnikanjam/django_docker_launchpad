@@ -3,14 +3,12 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 
 class CustomUserCreationForm(UserCreationForm):
-
     class Meta(UserCreationForm):
         model = get_user_model()
         fields = ('email', 'username',)  # password field is implicitly included
 
 
 class CustomUserChangeForm(UserChangeForm):
-
     class Meta(UserChangeForm):
         model = get_user_model()
         fields = ('email', 'username',)

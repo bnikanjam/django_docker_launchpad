@@ -26,7 +26,8 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand mr-4" href="{% url 'home' %}">WebApp Launchpad</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
@@ -41,23 +42,29 @@
                         {#                        <a class="nav-item nav-link" href="#">Test 1</a>#}
                         {#                        <a class="nav-item nav-link" href="#">Test 2</a>#}
                         <div class="btn-group">
-                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user"></i> {{ user.first_name }}
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="{% url 'post-create' %}"><i class="fas fa-plus"></i> New Post</a>
-                                <a class="dropdown-item" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+                                <a class="dropdown-item" href="{% url 'post-create' %}"><i class="fas fa-plus"></i> New
+                                    Post</a>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}"><i
+                                        class="fas fa-sign-out-alt"></i> Sign out</a>
                             </div>
                         </div>
                     {% else %}
                         <div class="btn-group">
-                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Sign in
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="{% provider_login_url 'github' %}"><i class="fab fa-github"></i> Sign in with GitHub</a>
+                                <a class="dropdown-item" href="{% provider_login_url 'github' %}"><i
+                                        class="fab fa-github"></i> Sign in with GitHub</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'account_login' %}"><i class="fas fa-at"></i> Sign in with Email</a>
+                                <a class="dropdown-item" href="{% url 'account_login' %}"><i class="fas fa-at"></i> Sign
+                                    in with Email</a>
                             </div>
                         </div>
                     {% endif %}
@@ -88,8 +95,8 @@
     </div>
 </footer>
 
-<script src="{% static 'bootstrap/jquery-3.4.1.min.js' %}" ></script>
-<script src="{% static 'bootstrap/popper.js' %}" ></script>
-<script src="{% static 'bootstrap/js/bootstrap.min.js' %}" ></script>
+<script src="{% static 'bootstrap/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'bootstrap/popper.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 </html>

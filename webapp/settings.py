@@ -4,7 +4,6 @@ import dj_database_url
 
 from webapp.settings_social_oauth import SOCIALACCOUNT_PROVIDERS
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ENVIRONMENT = os.environ.get('ENVIRONMENT')
@@ -35,7 +34,6 @@ if ENVIRONMENT == 'production':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 else:
     ALLOWED_HOSTS = []
-
 
 INSTALLED_APPS = [
     'rest_framework',
@@ -75,7 +73,6 @@ DEVELOPMENT_INSTALLED_APPS = [
 if ENVIRONMENT == 'development':
     INSTALLED_APPS += DEVELOPMENT_INSTALLED_APPS
 
-
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # corsheaders config
     'django.middleware.common.CommonMiddleware',  # corsheaders config
@@ -91,9 +88,7 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',  # django-debug-toolbar config
 ]
 
-
 ROOT_URLCONF = 'webapp.urls'
-
 
 TEMPLATES = [
     {
@@ -113,9 +108,7 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'webapp.wsgi.application'
-
 
 DATABASES = {
     'default': {
@@ -127,7 +120,6 @@ DATABASES = {
         'PORT': 5432
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -144,14 +136,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'US/Pacific'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
 
 # Assets
 STATIC_URL = '/static/'  # URL to reference static files
@@ -164,7 +154,6 @@ STATICFILES_FINDERS = [
 ]
 MEDIA_URL = '/media/'  # URL we can use in our templates for users' files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Absolute file system path to user-uploaded files' directory
-
 
 # User Management
 AUTH_USER_MODEL = 'users.CustomUser'  # CustomUser instead of the default User model
@@ -189,9 +178,7 @@ ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 600
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 ACCOUNT_LOGIN_ON_PASSWORD_RESET = True
 
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -202,7 +189,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ],
 }
-
 
 # corsheaders config
 CORS_ORIGIN_WHITELIST = [
@@ -217,7 +203,6 @@ CORS_ALLOW_METHODS = [
     'PUT',
 ]
 
-
 # SendGrid Email
 # Setting EMAIL_BACKEND not necessary for SendGrid
 EMAIL_HOST = 'smtp.sendgrid.net'
@@ -228,22 +213,20 @@ EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
 # None SendGrid Email Settings
 DEFAULT_FROM_EMAIL = 'concierge@djangowebapp.com'
 
-
 # Stripe Payment
 STRIPE_TEST_PUBLISHABLE_KEY = os.environ.get('STRIPE_TEST_PUBLISHABLE_KEY')
 STRIPE_TEST_SECRET_KEY = os.environ.get('STRIPE_TEST_SECRET_KEY')
-
 
 # For django-debug-toolbar
 # Get the docker machine IP which web server is running in
 # If not running in docker, INTERNAL_IPS = '127.0.0.1'
 if ENVIRONMENT == 'development':
     import socket
+
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
     INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
     if DEBUG:
         print('Docker machine IP:', INTERNAL_IPS)
-
 
 # Amazon S3 Credentials and django-storages settings
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'  # upload media files to S3

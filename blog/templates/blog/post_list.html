@@ -12,22 +12,25 @@
                 <h5><a class="article-title" href="{% url 'post-detail' post.slug %}">{{ post.title }}</a></h5>
                 <div class="article-metadata">
                     <small class="text-muted">
-                        {{ post.updated_at|naturaltime|capfirst}} by {{ post.author.first_name }} {{ post.author.last_name }}
+                        {{ post.updated_at|naturaltime|capfirst }}
+                        by {{ post.author.first_name }} {{ post.author.last_name }}
                     </small>
                 </div>
                 <p class="article-content">{{ post.content|truncatewords:20 }}</p>
-                        <div>
-                            <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="{% url 'post-detail' post.slug %}">Read</a>
-{#                            <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="#">Tweet</a>#}
-{#                            <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="#">Text</a>#}
-{#                            <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="#">Email</a>#}
-                            {% if post.author == user %}
-                            <a class="btn btn-outline-info btn-sm mt-1 mb-1" href="{% url 'post-update' post.slug %}">Update</a>
-{#                            <a class="btn btn-outline-secondary btn-sm mt-1 mb-1" href="#">Update</a>#}
-                            <a class="btn btn-outline-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' post.slug %}"}>Delete
-                            </a>
-                            {% endif %}
-                        </div>
+                <div>
+                    <a class="btn btn-outline-primary btn-sm mt-1 mb-1"
+                       href="{% url 'post-detail' post.slug %}">Read</a>
+                    {#                            <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="#">Tweet</a>#}
+                    {#                            <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="#">Text</a>#}
+                    {#                            <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="#">Email</a>#}
+                    {% if post.author == user %}
+                        <a class="btn btn-outline-info btn-sm mt-1 mb-1"
+                           href="{% url 'post-update' post.slug %}">Update</a>
+                        {#                            <a class="btn btn-outline-secondary btn-sm mt-1 mb-1" href="#">Update</a>#}
+                        <a class="btn btn-outline-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' post.slug %}" }>Delete
+                        </a>
+                    {% endif %}
+                </div>
             </div>
         </article>
     {% endfor %}

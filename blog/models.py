@@ -23,7 +23,7 @@ class Post(BaseModel):
     slug = models.SlugField(max_length=127, unique=True)
     description = models.CharField(max_length=255, blank=True, null=True)
     header_img = models.ImageField(default='defaults/default_header.jpeg',
-                                   upload_to='uploads/blog_posts',)
+                                   upload_to='uploads/blog_posts', )
 
     class Meta(BaseModel.Meta):
         verbose_name = 'post'

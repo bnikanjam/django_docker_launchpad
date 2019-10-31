@@ -7,7 +7,6 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -25,7 +24,8 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=127)),
                 ('slug', models.SlugField(max_length=127, unique=True)),
                 ('description', models.CharField(blank=True, max_length=255, null=True)),
-                ('header_img', models.ImageField(default='defaults/default_header.jpeg', upload_to='uploads/blog_posts')),
+                ('header_img',
+                 models.ImageField(default='defaults/default_header.jpeg', upload_to='uploads/blog_posts')),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
@@ -42,7 +42,8 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('content', models.TextField()),
-                ('author', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('author',
+                 models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
                 ('review', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.Post')),
             ],
             options={

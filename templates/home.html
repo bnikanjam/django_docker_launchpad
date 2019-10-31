@@ -12,7 +12,7 @@
         {% else %}
             You are logged in with {{ user.email }}
         {% endif %}
-        <a href="{% url 'account_logout'  %}">Sign out</a>
+        <a href="{% url 'account_logout' %}">Sign out</a>
     {% else %}
         You are not signed in.
         <a href="{% url 'account_login' %}">Sign in</a> - <a href="{% url 'account_signup' %}">Sign up</a>
